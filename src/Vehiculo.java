@@ -4,13 +4,6 @@ public abstract  class Vehiculo {
     protected double precio;
     private Medidas medidas;
 
-    public Medidas getMedidas() {
-        return medidas;
-    }
-
-    public void setMedidas(Medidas medidas) {
-        this.medidas = medidas;
-    }
 
     protected enum TipoCombustible{
         Diesel,
@@ -44,6 +37,13 @@ public abstract  class Vehiculo {
         this.combustible = vehiculo.combustible;
     }
     /*Getters y Setters*/
+    public Medidas getMedidas() {
+        return medidas;
+    }
+
+    public void setMedidas(Medidas medidas) {
+        this.medidas = medidas;
+    }
     public String getMarca() {
         return marca;
     }
@@ -86,6 +86,7 @@ public abstract  class Vehiculo {
     public void setCombustible(TipoCombustible combustible) {
         this.combustible = combustible;
     }
+    @Override
     public String toString(){
         return "Marca: " + marca + "\nModelo: " + modelo + "\nAFabricacion: " + aFabricacion + "\nKms: " + kms + "\nPortenciaCV: " + portenciaCV + "\nCombustible: " + combustible;
     }
