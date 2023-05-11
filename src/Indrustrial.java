@@ -1,11 +1,12 @@
 import java.util.Objects;
 
-public class Indrustrial extends Vehiculo {
+public class Indrustrial extends Vehiculo implements Camperizable {
     private float tamCaja;
 
     /*constructor*/
     public Indrustrial(String marca, String modelo, float tamCaja) {
-        super(marca, modelo);
+        this.setMarca(marca);
+        this.setModelo(modelo);
         this.tamCaja = tamCaja;
     }
 
@@ -105,7 +106,7 @@ public class Indrustrial extends Vehiculo {
         hash = 89 * hash + Float.floatToIntBits(this.getTamCaja());
         return hash;
     }
-    @Override
+   /* @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -128,10 +129,25 @@ public class Indrustrial extends Vehiculo {
         }
         return true;
 
-    }
+    }*/
     /*toString*/
     @Override
     public String toString() {
         return "Industrial{" + "marca=" + getMarca() + ", modelo=" + getModelo() + ", tamCaja=" + getTamCaja() + '}';
+    }
+
+    @Override
+    public void añadirCama() {
+
+    }
+
+    @Override
+    public void añadirDucha() {
+
+    }
+
+    @Override
+    public void añadirCocina() {
+
     }
 }
