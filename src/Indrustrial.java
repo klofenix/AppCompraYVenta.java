@@ -69,13 +69,13 @@ public class Indrustrial extends Vehiculo implements Camperizable {
     }
 
     @Override
-    public int getPortenciaCV() {
-        return super.getPortenciaCV();
+    public int getPotenciaCV() {
+        return super.getPotenciaCV();
     }
 
     @Override
-    public void setPortenciaCV(int portenciaCV) {
-        super.setPortenciaCV(portenciaCV);
+    public void setPotenciaCV(int potenciaCV) {
+        super.setPotenciaCV(potenciaCV);
     }
 
     @Override

@@ -1,8 +1,14 @@
 public  class Moto extends Vehiculo  {
-    protected int numRuedas;
+    private int numRuedas;
 
     /* Constructor */
-    public Moto(){}
+    public final void Moto(){}
+    public Moto(int numRuedas){
+        this.numRuedas = numRuedas;
+    }
+    public Moto(Moto moto){
+        this.numRuedas = moto.numRuedas;
+    }
     /* toString */
     public String toString(){
         return "Moto";

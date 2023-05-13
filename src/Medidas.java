@@ -4,7 +4,7 @@ public class Medidas {
     private int largo;
 
     /* constructor */
-    public Medidas(int alto, int ancho, int largo) {
+    public  final void Medidas(int alto, int ancho, int largo) {
         this.alto = alto;
         this.ancho = ancho;
         this.largo = largo;
@@ -32,10 +32,10 @@ public class Medidas {
 
 
     /* hascode y Equals */
-    @Override
+    /*@Override
     public int hashCode() {
         return Object.hascode(alto, ancho, largo);
-    }
+    }*/
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

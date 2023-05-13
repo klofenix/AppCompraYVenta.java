@@ -68,10 +68,10 @@ public abstract  class Vehiculo {
     public void setKms(int kms) {
         this.kms = kms;
     }
-    public int getPortenciaCV() {
+    public int getPotenciaCV() {
         return portenciaCV;
     }
-    public void setPortenciaCV(int portenciaCV) {
+    public void setPotenciaCV(int portenciaCV) {
         this.portenciaCV = portenciaCV;
     }
     public double getPrecio() {
@@ -95,5 +95,9 @@ public abstract  class Vehiculo {
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+    public int getPotenciaKW(int getPotenciaCV){
+        double _1KW = getPotenciaCV / 1.34;
+        return (int) _1KW;
     }
 }
