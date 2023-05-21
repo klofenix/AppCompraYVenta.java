@@ -6,7 +6,14 @@ public  class Moto extends Vehiculo  {
     public Moto(int numRuedas){
         this.numRuedas = numRuedas;
     }
+
+    public Moto(String marca, String modelo, int aFabricacion, int kms, int potenciaCV, double precio, TipoCombustible combustible, Medidas medidas, int numRuedas) {
+        super(marca, modelo, aFabricacion, kms, potenciaCV, precio, combustible, medidas);
+        this.numRuedas = numRuedas;
+    }
+
     public Moto(Moto moto){
+        super(moto);
         this.numRuedas = moto.numRuedas;
     }
     /* toString */
@@ -33,6 +40,11 @@ public  class Moto extends Vehiculo  {
         int result = 1;
         result = prime * result + numRuedas;
         return result;
+    }
+    @Override
+    public int getPotenciaKW(int getPotenciaCV){
+        double _1KW = getPotenciaCV * 1.34;
+        return (int) _1KW;
     }
 
      /*getter y setter*/

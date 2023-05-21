@@ -1,9 +1,19 @@
+import java.util.Objects;
+
 public class Medidas {
     private int alto;
     private int ancho;
     private int largo;
 
+
     /* constructor */
+    public Medidas(){
+    }
+    public Medidas(Medidas medidas) {
+        this.alto = medidas.alto;
+        this.ancho = medidas.ancho;
+        this.largo = medidas.largo;
+    }
     public  final void Medidas(int alto, int ancho, int largo) {
         this.alto = alto;
         this.ancho = ancho;
@@ -30,12 +40,11 @@ public class Medidas {
         this.largo = largo;
     }
 
-
-    /* hascode y Equals */
-    /*@Override
+    @Override
     public int hashCode() {
-        return Object.hascode(alto, ancho, largo);
-    }*/
+        return Objects.hash(alto, ancho, largo);
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

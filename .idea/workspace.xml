@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f7f0f476-ae9a-4eea-adec-c2ffa55764a4" name="Changes" comment="save!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Indrustrial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Indrustrial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Medidas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Medidas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Moto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Moto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Turismo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Turismo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vehiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vehiculo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +51,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -64,7 +70,9 @@
       <workItem from="1683174232576" duration="5549000" />
       <workItem from="1683568513431" duration="9922000" />
       <workItem from="1683961134143" duration="831000" />
-      <workItem from="1684160287159" duration="961000" />
+      <workItem from="1684160287159" duration="976000" />
+      <workItem from="1684651456153" duration="2270000" />
+      <workItem from="1684683250752" duration="4022000" />
     </task>
     <task id="LOCAL-00001" summary="save!">
       <created>1683568853233</created>
@@ -115,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684251421172</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="save!">
+      <created>1684651120823</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684651120823</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,5 +150,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="save!" />
     <option name="LAST_COMMIT_MESSAGE" value="save!" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

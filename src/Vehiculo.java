@@ -1,6 +1,8 @@
+import java.util.Objects;
+
 public abstract  class Vehiculo {
     protected String marca, modelo;
-    protected int aFabricacion, kms, portenciaCV;
+    protected int aFabricacion, kms, potenciaCV;
     protected double precio;
     private Medidas medidas;
 
@@ -14,14 +16,15 @@ public abstract  class Vehiculo {
     }
     protected TipoCombustible combustible;
     /*Constructor*/
-    public Vehiculo(String marca, String modelo, int aFabricacion, int kms, int portenciaCV, double precio, TipoCombustible combustible) {
+    public Vehiculo(String marca, String modelo, int aFabricacion, int kms, int potenciaCV, double precio, TipoCombustible combustible, Medidas medidas) {
         this.marca = marca;
         this.modelo = modelo;
         this.aFabricacion = aFabricacion;
         this.kms = kms;
-        this.portenciaCV = portenciaCV;
+        this.potenciaCV = potenciaCV;
         this.precio = precio;
         this.combustible = combustible;
+        this.medidas = medidas;
     }
 
 /*constructor por defecto y copia*/
@@ -32,9 +35,10 @@ public abstract  class Vehiculo {
         this.modelo = vehiculo.modelo;
         this.aFabricacion = vehiculo.aFabricacion;
         this.kms = vehiculo.kms;
-        this.portenciaCV = vehiculo.portenciaCV;
+        this.potenciaCV = vehiculo.potenciaCV;
         this.precio = vehiculo.precio;
         this.combustible = vehiculo.combustible;
+        this.medidas = new Medidas(vehiculo.getMedidas());
     }
     /*Getters y Setters*/
     public Medidas getMedidas() {
@@ -69,10 +73,10 @@ public abstract  class Vehiculo {
         this.kms = kms;
     }
     public int getPotenciaCV() {
-        return portenciaCV;
+        return potenciaCV;
     }
     public void setPotenciaCV(int portenciaCV) {
-        this.portenciaCV = portenciaCV;
+        this.potenciaCV = portenciaCV;
     }
     public double getPrecio() {
         return precio;
@@ -88,16 +92,22 @@ public abstract  class Vehiculo {
     }
     @Override
     public String toString(){
-        return "Marca: " + marca + "\nModelo: " + modelo + "\nAFabricacion: " + aFabricacion + "\nKms: " + kms + "\nPortenciaCV: " + portenciaCV + "\nCombustible: " + combustible;
+        return "Marca: " + marca + "\nModelo: " + modelo + "\nAFabricacion: " + aFabricacion + "\nKms: " + kms + "\nPortenciaCV: " + potenciaCV + "\nCombustible: " + combustible;
     }
     /*Metodos*/
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(marca, modelo, aFabricacion, kms, potenciaCV, precio, medidas, combustible);
+    }
+
     public int getPotenciaKW(int getPotenciaCV){
-        double _1KW = getPotenciaCV / 1.34;
+        double _1KW = getPotenciaCV * 1.34;
         return (int) _1KW;
     }
 }
