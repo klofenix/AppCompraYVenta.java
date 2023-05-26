@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Usuario {
@@ -7,16 +7,20 @@ public class Usuario {
     protected String fechaNac;
     protected String provincia;
     protected Vehiculo miCoche;
-    protected Vehiculo[] favoritos;
+    protected ArrayList<Vehiculo> favoritos;
+
 
     /*Constructor*/
-    public Usuario(){}
+    public Usuario() {
+        favoritos = new ArrayList<>();
+    }
+
     public Usuario(String nombre, String apellido, String fechaNac, String provincia) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNac = fechaNac;
         this.provincia = provincia;
-        this.favoritos = new Vehiculo[3];
+        this.favoritos = new ArrayList<>();
     }
 
     public Usuario(Usuario usuario) {
@@ -24,31 +28,39 @@ public class Usuario {
         this.apellido = usuario.getApellido();
         this.fechaNac = usuario.getFechaNac();
         this.provincia = usuario.getProvincia();
-        this.miCoche = usuario.miCoche;
-        this.favoritos = new Vehiculo[3];
+        this.miCoche = usuario.getMiCoche();
+        this.favoritos = new ArrayList<>(usuario.getFavoritos());
     }
+
     /*getters y setters*/
     public String getNombre() {
         return nombre;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     public String getApellido() {
         return apellido;
     }
+
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
     public String getFechaNac() {
         return fechaNac;
     }
+
     public void setFechaNac(String fechaNac) {
         this.fechaNac = fechaNac;
     }
+
     public String getProvincia() {
         return provincia;
     }
+
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
@@ -60,29 +72,32 @@ public class Usuario {
     public void setMiCoche(Vehiculo miCoche) {
         this.miCoche = miCoche;
     }
-    public Vehiculo[] getFavoritos() {
+
+    public ArrayList<Vehiculo> getFavoritos() {
         return favoritos;
     }
+
     public void agregarCocheFavorito(Vehiculo vehiculo) {
-        for (int i = 0; i < favoritos.length; i++) {
-            if (favoritos[i] == null) {
-                favoritos[i] = vehiculo;
-                break;
-            }
-        }
+        favoritos.add(vehiculo);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Usuario usuario)) return false;
-        return Objects.equals(getNombre(), usuario.getNombre()) && Objects.equals(getApellido(), usuario.getApellido()) && Objects.equals(getFechaNac(), usuario.getFechaNac()) && Objects.equals(getProvincia(), usuario.getProvincia()) && Objects.equals(getMiCoche(), usuario.getMiCoche()) && Arrays.equals(getFavoritos(), usuario.getFavoritos());
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
+        return Objects.equals(nombre, usuario.nombre) &&
+                Objects.equals(apellido, usuario.apellido) &&
+                Objects.equals(fechaNac, usuario.fechaNac) &&
+                Objects.equals(provincia, usuario.provincia) &&
+                Objects.equals(miCoche, usuario.miCoche) &&
+                Objects.equals(favoritos, usuario.favoritos);
     }
 
     @Override
     public int hashCode() {
         int result = Objects.hash(getNombre(), getApellido(), getFechaNac(), getProvincia(), getMiCoche());
-        result = 31 * result + Arrays.hashCode(getFavoritos());
+        result = 31 * result + Objects.hashCode(getFavoritos());
         return result;
     }
 
@@ -94,7 +109,7 @@ public class Usuario {
                 ", fechaNac='" + fechaNac + '\'' +
                 ", provincia='" + provincia + '\'' +
                 ", miCoche=" + miCoche +
-                ", favoritos=" + Arrays.toString(favoritos) +
+                ", favoritos=" + favoritos +
                 '}';
     }
 }
