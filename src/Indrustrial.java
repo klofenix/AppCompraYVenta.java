@@ -24,23 +24,17 @@ public class Indrustrial extends Vehiculo implements Camperizable {
         this.tamCaja = tamCaja;
     }
 
-   /*hashcode e equals*/
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.getMarca());
-        hash = 89 * hash + Objects.hashCode(this.getModelo());
-        hash = 89 * hash + Float.floatToIntBits(this.getTamCaja());
-        return hash;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Indrustrial that)) return false;
         if (!super.equals(o)) return false;
-        Indrustrial that = (Indrustrial) o;
         return Float.compare(that.tamCaja, tamCaja) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), tamCaja);
     }
 
     /*toString*/
@@ -65,7 +59,7 @@ public class Indrustrial extends Vehiculo implements Camperizable {
     }
     @Override
     public int getPotenciaKW(int getPotenciaCV){
-        double _1KW = getPotenciaCV * 1.34;
+        double _1KW = getPotenciaCV / 1.34;
         return (int) _1KW;
     }
 }

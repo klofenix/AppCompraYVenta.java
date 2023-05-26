@@ -80,6 +80,9 @@ public class Usuario {
     public void agregarCocheFavorito(Vehiculo vehiculo) {
         favoritos.add(vehiculo);
     }
+    public void eliminarFavorito(Vehiculo vehiculo) {
+        favoritos.remove(vehiculo);
+    }
 
     @Override
     public boolean equals(Object o) {

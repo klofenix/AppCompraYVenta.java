@@ -4,7 +4,7 @@ public abstract  class Vehiculo {
     protected String marca, modelo;
     protected int aFabricacion, kms, potenciaCV;
     protected double precio;
-    private Medidas medidas;
+    protected Medidas medidas;
 
 
     protected enum TipoCombustible{
@@ -97,8 +97,10 @@ public abstract  class Vehiculo {
     /*Metodos*/
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Vehiculo vehiculo)) return false;
+        return aFabricacion == vehiculo.aFabricacion && getKms() == vehiculo.getKms() && getPotenciaCV() == vehiculo.getPotenciaCV() && Double.compare(vehiculo.getPrecio(), getPrecio()) == 0 && getMarca().equals(vehiculo.getMarca()) && getModelo().equals(vehiculo.getModelo()) && getMedidas().equals(vehiculo.getMedidas()) && getCombustible() == vehiculo.getCombustible();
     }
 
     @Override
@@ -107,7 +109,7 @@ public abstract  class Vehiculo {
     }
 
     public int getPotenciaKW(int getPotenciaCV){
-        double _1KW = getPotenciaCV * 1.34;
+        double _1KW = getPotenciaCV / 1.34;
         return (int) _1KW;
     }
 }

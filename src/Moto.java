@@ -1,8 +1,10 @@
+import java.util.Objects;
+
 public  class Moto extends Vehiculo  {
     private int numRuedas;
 
     /* Constructor */
-    public final void Moto(){}
+    public final void moto(){}
     public Moto(int numRuedas){
         this.numRuedas = numRuedas;
     }
@@ -16,38 +18,28 @@ public  class Moto extends Vehiculo  {
         super(moto);
         this.numRuedas = moto.numRuedas;
     }
-    /* toString */
-    public String toString(){
-        return "Moto";
-    }
-    /*hascode e equals*/
+
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass()!= obj.getClass())
-            return false;
-        Moto other = (Moto) obj;
-        if (numRuedas!= other.numRuedas)
-            return false;
-        return true;
-    }
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + numRuedas;
-        return result;
-    }
-    @Override
-    public int getPotenciaKW(int getPotenciaCV){
-        double _1KW = getPotenciaCV * 1.34;
-        return (int) _1KW;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Moto moto)) return false;
+        if (!super.equals(o)) return false;
+        return getNumRuedas() == moto.getNumRuedas();
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), getNumRuedas());
+    }
+
+    /*getPotencia*/
+    @Override
+    public int getPotenciaKW(int getPotenciaCV){
+        double _1KW = getPotenciaCV / 1.34;
+        return (int) _1KW;
+    }
      /*getter y setter*/
+
     public int getNumRuedas() {
         return numRuedas;
     }
@@ -55,4 +47,19 @@ public  class Moto extends Vehiculo  {
         this.numRuedas = numRuedas;
     }
 
+
+    @Override
+    public String toString() {
+        return "Moto{" +
+                "numRuedas=" + numRuedas +
+                ", marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", aFabricacion=" + aFabricacion +
+                ", kms=" + kms +
+                ", potenciaCV=" + potenciaCV +
+                ", precio=" + precio +
+                ", medidas=" + medidas +
+                ", combustible=" + combustible +
+                '}';
+    }
 }
